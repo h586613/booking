@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velkommen</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<div class="h1-container">
+    <h1>Velkommen!</h1>
+</div>
+
+<form th:action="@{/registercustomer}" method="post">
+    <div>
+        <label for="firstname">Fornavn</label>
+        <input type="text" id="firstname" name="firstname" required />
+    </div>
+
+    <div>
+        <label for="lastname">Etternavn</label>
+        <input type="text" id="lastname" name="lastname" required />
+    </div>
+
+    <div>
+        <label for="phonenumber">Telefon</label>
+        <input type="text" id="phonenumber" name="phonenumber" required />
+    </div>
+
+    <div>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required />
+    </div>
+
+    <button type="submit">Registrer bruker</button>
+</form>
+
+<a href="http://localhost:8080/room">Opprett rom her</a> <br>
+
+<a href="http://localhost:8080/booking">Rom finnes allerede? Book et her</a>
+</body>
+</html>

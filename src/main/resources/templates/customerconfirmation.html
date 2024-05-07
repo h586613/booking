@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer created</title>
+</head>
+<body>
+
+<div th:text="${customer != null} ? ${customer.firstName} : 'No name available'"></div>
+<a href="http://localhost:8080/room">Nytt rom</a>
+<a href="http://localhost:8080/room">Ny booking</a>
+
+</body>
+</html>

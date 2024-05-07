@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Booking Form</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<h1>Make a Booking</h1>
+
+<form action="#" th:action="@{/submitBooking}" th:object="${booking}" method="post">
+
+  <!-- Dropdown for selecting a room -->
+  <label for="room">Room:</label>
+  <select id="room" name="room">
+    <option th:each="room : ${rooms}" th:value="${room.id}" th:text="${room.roomNumber}"></option>
+  </select>
+  <br/>
+
+  <!-- Dropdown for selecting a customer -->
+  <label for="customer">Customer:</label>
+  <select id="customer" name="customer">
+    <option th:each="customer : ${customers}" th:value="${customer.id}" th:text="${customer.firstName + ' ' + customer.lastName}"></option>
+  </select>
+  <br/>
+
+
+  <!-- Fields for start and end date -->
+  <label for="startDate">Start Date:</label>
+  <input type="datetime-local" id="startDate" name="startDate"/>
+  <br/>
+
+  <label for="endDate">End Date:</label>
+  <input type="datetime-local" id="endDate" name="endDate" />
+  <br/>
+
+  <input type="submit" value="Book Now" />
+</form>
+<a href="http://localhost:8080/index">Forsiden</a> <br>
+
+</body>
+</html>
